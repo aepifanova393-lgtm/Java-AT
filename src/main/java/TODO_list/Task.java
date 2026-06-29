@@ -23,10 +23,15 @@ public class Task {
         this.statusTask = statusTask;
     }
 
+    @Override
+    public String toString() {
+        return "Name task: " + nameTask + " " + "Status task: " + statusTask;
+    }
+
     //метод вывода информации
-    public void printInfo () {
+    public void printInfo() {
         if (statusTask) {
-            System.out.println("Task " + nameTask + "is done!");
+            System.out.println("Task " + nameTask + " is done!");
         } else {
             System.out.println("Task " + nameTask + ":" + "Check registration");
         }

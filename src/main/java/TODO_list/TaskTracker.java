@@ -8,7 +8,7 @@ public class TaskTracker {
 
     public void addTask(Task task) {
         listOfTasks.add(task);
-        System.out.println("Добавлена задача" + task);
+        System.out.println("Task added: " + task.getNameTask());
     }
 
     @Override
@@ -21,11 +21,11 @@ public class TaskTracker {
             String name = t.getNameTask();
             if (name.equals(nameTask)) {
                 t.setStatusTask(true);
-                System.out.println("Задача " + nameTask + " выполнена!");
+                System.out.println("Task " + nameTask + " is done!");
                 return;
                 }
             }
-        System.out.println("Задача " + nameTask + " не найдена!");
+        System.out.println("Task " + nameTask + " is not done!");
         }
 
     public void getStatus (String nameTask) {
@@ -34,17 +34,18 @@ public class TaskTracker {
             if (name.equals(nameTask)) {
                 boolean status = t.getStatusTask();
                     if (status) {
-                        System.out.println("Статус задачи " + name + ":" + "выполнена!");
-                    } else {
-                        System.out.println("Статус задачи " + name + ":" + "не выполнена!");
+                        System.out.println("Task status: " + name + " done");
                         return;
-                    }
+                    } else {
+                    System.out.println("Task status: " + name + " is not done");
+                        return;
+                }
             }
         }
-        System.out.println("Задача " + nameTask + " не найдена!");
+        System.out.println("Task " + nameTask + " is not found");
         }
 
-    public void taskStatistics (ArrayList<Task> listOfTasks) {
+    public void taskStatistics () {
         int quantityTasks = listOfTasks.size();
         int quantityDone = 0;
         int quantityNotDone = 0;
@@ -56,7 +57,7 @@ public class TaskTracker {
                     quantityNotDone++;
                 }
         }
-        System.out.println("Всего задач: " + quantityTasks + "\n" + "Выполнено: " + quantityDone + "\n" + "Открыто: " + quantityNotDone);
+        System.out.println("Total tasks: " + quantityTasks + "\n" + "Done: " + quantityDone + "\n" + "Open: " + quantityNotDone);
     }
 }
 
